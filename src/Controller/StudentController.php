@@ -12,7 +12,7 @@ class StudentController extends AbstractController
     /**
      * @Route("/students", name="students")
      */
-    public function index()
+    public function getStudents()
     {
 
         $students = $this->getDoctrine()
