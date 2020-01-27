@@ -15,6 +15,7 @@ class StudentController extends AbstractController
     public function getStudents()
     {
 
+        
         $students = $this->getDoctrine()
         ->getRepository(Student::class)
         ->findAll();
@@ -22,11 +23,14 @@ class StudentController extends AbstractController
         foreach($students as $student) {
             $arrayCollection[] = array(
                 'uid' => $student->getUid(),
-               'username' => $student->getUsername(),
-               'first_name' => $student->getFirstName(),
-               'last_name' => $student->getLastName(),
-               'mail' => $student->getMail(),
-               'promo' => $student->getPromo()
+               'prenomStudent' => $student->getPrenomstudent(),
+               'nomStudent' => $student->getNomstudent(),
+               'emailStudent' => $student->getEmailstudent(),
+               'promoStudent' => $student->getPromostudent(),
+               'anneeAcademiqueStudent' => $student->getAnneeacademiquestudent(),
+               'genderStudent' => $student->getGenderstudent(),
+               'campusStudent' => $student->getCampusstudent(),
+               'etatDossierStudent' => $student->getEtatdossierstudent(),
             );
        }
        
@@ -47,7 +51,7 @@ class StudentController extends AbstractController
      */
     public function getStudent($id)
     {
-
+/*
         $student = $this->getDoctrine()
         ->getRepository(Student::class)
         ->findOneBy(array('uid' => $id));
@@ -68,7 +72,7 @@ class StudentController extends AbstractController
         'promo' => $student->getPromo());
         
        return new JsonResponse( $response);
-      
+      */
        
     }
 }

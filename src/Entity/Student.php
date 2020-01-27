@@ -5,108 +5,134 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\StudentRepository")
+ * Student
+ *
+ * @ORM\Table(name="student")
+ * @ORM\Entity
  */
 class Student
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string|null
+     *
+     * @ORM\Column(name="prenomStudent", type="string", length=255, nullable=true, options={"default"="NULL"})
      */
-    private $first_name;
+    private $prenomstudent = 'NULL';
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string|null
+     *
+     * @ORM\Column(name="nomStudent", type="string", length=255, nullable=true, options={"default"="NULL"})
      */
-    private $last_name;
+    private $nomstudent = 'NULL';
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="emailStudent", type="string", length=255, nullable=false)
      */
-    private $username;
+    private $emailstudent;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string|null
+     *
+     * @ORM\Column(name="promoStudent", type="string", length=255, nullable=true, options={"default"="NULL"})
      */
-    private $mail;
+    private $promostudent = 'NULL';
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $promo;
-
-    /**
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="uid", type="integer", nullable=false)
      */
     private $uid;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="anneeAcademiqueStudent", type="integer", nullable=false)
+     */
+    private $anneeacademiquestudent;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="genderStudent", type="string", length=255, nullable=false)
+     */
+    private $genderstudent;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="campusStudent", type="string", length=255, nullable=false)
+     */
+    private $campusstudent;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etatDossierStudent", type="string", length=255, nullable=false)
+     */
+    private $etatdossierstudent;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getFirstName(): ?string
+    public function getPrenomstudent(): ?string
     {
-        return $this->first_name;
+        return $this->prenomstudent;
     }
 
-    public function setFirstName(?string $first_name): self
+    public function setPrenomstudent(?string $prenomstudent): self
     {
-        $this->first_name = $first_name;
+        $this->prenomstudent = $prenomstudent;
 
         return $this;
     }
 
-    public function getLastName(): ?string
+    public function getNomstudent(): ?string
     {
-        return $this->last_name;
+        return $this->nomstudent;
     }
 
-    public function setLastName(?string $last_name): self
+    public function setNomstudent(?string $nomstudent): self
     {
-        $this->last_name = $last_name;
+        $this->nomstudent = $nomstudent;
 
         return $this;
     }
 
-    public function getUsername(): ?string
+    public function getEmailstudent(): ?string
     {
-        return $this->username;
+        return $this->emailstudent;
     }
 
-    public function setUsername(string $username): self
+    public function setEmailstudent(string $emailstudent): self
     {
-        $this->username = $username;
+        $this->emailstudent = $emailstudent;
 
         return $this;
     }
 
-    public function getMail(): ?string
+    public function getPromostudent(): ?string
     {
-        return $this->mail;
+        return $this->promostudent;
     }
 
-    public function setMail(string $mail): self
+    public function setPromostudent(?string $promostudent): self
     {
-        $this->mail = $mail;
-
-        return $this;
-    }
-
-    public function getPromo(): ?string
-    {
-        return $this->promo;
-    }
-
-    public function setPromo(?string $promo): self
-    {
-        $this->promo = $promo;
+        $this->promostudent = $promostudent;
 
         return $this;
     }
@@ -122,4 +148,54 @@ class Student
 
         return $this;
     }
+
+    public function getAnneeacademiquestudent(): ?int
+    {
+        return $this->anneeacademiquestudent;
+    }
+
+    public function setAnneeacademiquestudent(int $anneeacademiquestudent): self
+    {
+        $this->anneeacademiquestudent = $anneeacademiquestudent;
+
+        return $this;
+    }
+
+    public function getGenderstudent(): ?string
+    {
+        return $this->genderstudent;
+    }
+
+    public function setGenderstudent(string $genderstudent): self
+    {
+        $this->genderstudent = $genderstudent;
+
+        return $this;
+    }
+
+    public function getCampusstudent(): ?string
+    {
+        return $this->campusstudent;
+    }
+
+    public function setCampusstudent(string $campusstudent): self
+    {
+        $this->campusstudent = $campusstudent;
+
+        return $this;
+    }
+
+    public function getEtatdossierstudent(): ?string
+    {
+        return $this->etatdossierstudent;
+    }
+
+    public function setEtatdossierstudent(string $etatdossierstudent): self
+    {
+        $this->etatdossierstudent = $etatdossierstudent;
+
+        return $this;
+    }
+
+
 }

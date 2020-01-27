@@ -1,0 +1,77 @@
+App\Entity\Student:
+    type: entity
+    table: student
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        prenomstudent:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+                default: 'NULL'
+            column: prenomStudent
+        nomstudent:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+                default: 'NULL'
+            column: nomStudent
+        emailstudent:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: emailStudent
+        promostudent:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+                default: 'NULL'
+            column: promoStudent
+        uid:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        anneeacademiquestudent:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: anneeAcademiqueStudent
+        genderstudent:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: genderStudent
+        campusstudent:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: campusStudent
+        etatdossierstudent:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: etatDossierStudent
+    lifecycleCallbacks: {  }
