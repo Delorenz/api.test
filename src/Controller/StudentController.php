@@ -47,11 +47,11 @@ class StudentController extends AbstractController
     }
 
     /**
-     * @Route("/student/get/{id}", name="get student")
+     * @Route("/student/{id}", name="get student")
      */
     public function getStudent($id)
     {
-/*
+
         $student = $this->getDoctrine()
         ->getRepository(Student::class)
         ->findOneBy(array('uid' => $id));
@@ -64,15 +64,19 @@ class StudentController extends AbstractController
             );
         }
 
-        $response = array( 'uid' => $student->getUid(),
-        'username' => $student->getUsername(),
-        'first_name' => $student->getFirstName(),
-        'last_name' => $student->getLastName(),
-        'mail' => $student->getMail(),
-        'promo' => $student->getPromo());
+        $response = array(  'uid' => $student->getUid(),
+               'prenomStudent' => $student->getPrenomstudent(),
+               'nomStudent' => $student->getNomstudent(),
+               'emailStudent' => $student->getEmailstudent(),
+               'promoStudent' => $student->getPromostudent(),
+               'anneeAcademiqueStudent' => $student->getAnneeacademiquestudent(),
+               'genderStudent' => $student->getGenderstudent(),
+               'campusStudent' => $student->getCampusstudent(),
+               'etatDossierStudent' => $student->getEtatdossierstudent(),
+            );
         
        return new JsonResponse( $response);
-      */
+      
        
     }
 }
