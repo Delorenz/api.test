@@ -4,4 +4,4 @@
 #
 #ROUTES:
 # /students : All students
-# /student/get/{id} : get Student by its uid
+# /student/{id} : get Student by its uid
